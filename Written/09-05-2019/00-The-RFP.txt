@@ -3,10 +3,8 @@
 
 - Solicitation from the customer for a network design typically includes:
     + A list of design requirements: including business goals, scope and information on the existing network environment
-    + Types of solutions the design must provide: The types of solutions that the design must include, such as wireless, 
-      high availability (HA), security, and so forth. The wording for these requirements can be generalized or very specific
-    + Warranty requirements and legal terms: Warranty requirements for the products you offer, as well as any legal terms
-      attached to the solution
+    + Types of solutions the design must provide: The types of solutions that the design must include, such as wireless, high availability (HA), security, and so forth. The wording for these requirements can be generalized or very specific
+    + Warranty requirements and legal terms: Warranty requirements for the products you offer, as well as any legal terms attached to the solution
 
 - The customer offen sends the RFP to multiple vendors
     + Use the responses to compare competing proposals
@@ -16,8 +14,6 @@
     + Be timely, thorough, and honest
     + Use the customer's requested format
 
-- A Request for Information (RFI) can be quite broad in scope and typically only covers the technical aspects of the design 
-  request
+- A Request for Information (RFI) can be quite broad in scope and typically only covers the technical aspects of the design request
 
-- RFP takes more effort on the part of both parties because you would also include details on pricing, warranty, timetables, 
-  and legal expectations
+- RFP takes more effort on the part of both parties because you would also include details on pricing, warranty, timetables, and legal expectations

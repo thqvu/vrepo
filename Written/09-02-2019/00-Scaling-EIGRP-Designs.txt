@@ -1,5 +1,4 @@
-EIGRP is very tolerant of arbitrary topologies for small and medium-sized networks. This tolerance is both a strength and a 
-weakness.
+EIGRP is very tolerant of arbitrary topologies for small and medium-sized networks. This tolerance is both a strength and a weakness.
 
 EIGRP tolerates arbitrary topologies better than OSPF:
     - Use a structured, hierarchical approach with EIGRP.
@@ -9,21 +8,14 @@ Scaling EIGRP depends on topology and other functions:
     - Route summarization and filtering.
     - Limit the scope of EIGRP queries when there is no feasible successor.
 
-You can deploy EIGRP without restructuring the network. However, as the scale of the network increases, the risk of instability or 
-long convergence times becomes greater. If you scale your network beyond a couple of hundred routers, without a structured 
-hierarchy, then you will face EIGRP performance issues. As you increase the size of the network, you also need to make your network
-design more strict.
+You can deploy EIGRP without restructuring the network. However, as the scale of the network increases, the risk of instability or long convergence times becomes greater. If you scale your network beyond a couple of hundred routers, without a structured hierarchy, then you will face EIGRP performance issues. As you increase the size of the network, you also need to make your network design more strict.
 ** Note:
  This mechanism contrasts with OSPF, where a structured design is imposed at an early stage. 
  The counterpart to using EIGRP with an arbitrary topology would be an OSPF design that puts everything into OSPF Area 0. 
  This design works for small and medium-sized networks, up to about 300 OSPF routers.
 
-To scale EIGRP, you should use a structured hierarchical topology with route summarization.
-One of the most significant stability and convergence issues with EIGRP is the propagation of EIGRP queries. 
-When EIGRP does not have a feasible successor, it sends queries to its neighbors. The query tells the neighbor, 
+To scale EIGRP, you should use a structured hierarchical topology with route summarization. One of the most significant stability and convergence issues with EIGRP is the propagation of EIGRP queries. When EIGRP does not have a feasible successor, it sends queries to its neighbors. The query tells the neighbor: 
 “I do not have a route to this destination anymore; do not route through me. Let me know if you hear of a viable alternative route” 
-The router has to wait for replies to all of the queries that it sends out. Queries can flood through many routers in a portion of
-the network and increase convergence time. Summarization points, EIGRP stub routing, and route filtering limit EIGRP query 
-propagation and minimize convergence time.
+The router has to wait for replies to all of the queries that it sends out. Queries can flood through many routers in a portion of the network and increase convergence time. Summarization points, EIGRP stub routing, and route filtering limit EIGRP query propagation and minimize convergence time.
 ** Note:
  Examples that are used in the module focus on IPv4. However, the concepts equally apply to both IPv4 and IPv6.
