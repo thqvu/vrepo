@@ -1,0 +1,11 @@
+Before you sit down for your first meeting with the customer, it's important that you understand who your customer is---beyond the name or title on the business cards.
+You must fully research what your customer is doing as a business. What do they sell? What is their industry? How are they organized structurally?
+
+What sets your customer apart from their competitors?
+As you start to put the pieces of your customer's puzzle together, you will start to understand what potential network designs you can offer that will meet their approval.
+
+Your first discussion with the customer should be to understand business requirements and establish goals. Early on, you should understand from the customer what their overall goal for the network design project is.
+
+What are the benefits and risks to designing a new network? What will be considered success to key stakeholders?
+Answering these questions early is imperative to building a network that suits--and exceeds--the customer's needs.
+Consider that business requirements and goals might change as you work on your design plan, so the process of establishing goals and understanding business requirements is cyclical.
