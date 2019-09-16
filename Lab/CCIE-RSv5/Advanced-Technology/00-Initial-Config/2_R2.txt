@@ -1,12 +1,13 @@
 !
-! Last configuration change at 18:20:02 UTC Sun Dec 31 2017
-!
-version 15.6
+version 16.11
 no service timestamps debug uptime
 no service timestamps log uptime
-no service password-encryption
+service call-home
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console serial
 !
-hostname R2
+hostname CSR-R2
 !
 boot-start-marker
 boot-end-marker
@@ -14,18 +15,14 @@ boot-end-marker
 !
 !
 no aaa new-model
-ethernet lmi ce
-!
-!
-!
-mmi polling-interval 60
-no mmi auto-configure
-no mmi pvc
-mmi snmp-timeout 180
-!
-!
-!
-!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+  no destination transport-method email
 !
 !
 !
@@ -34,12 +31,114 @@ mmi snmp-timeout 180
 !
 !
 no ip domain lookup
-ip cef
-ipv6 unicast-routing
-ipv6 cef
 !
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+!
+ipv6 unicast-routing
 multilink bundle-name authenticated
 !
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2852492089
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2852492089
+ revocation-check none
+ rsakeypair TP-self-signed-2852492089
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-2852492089
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32383532 34393230 3839301E 170D3138 31323133 31313132 
+  31305A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 38353234 
+  39323038 39308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100DC8D 060B0792 7EE70471 C1B0A864 A1B0761D CD653B71 A052882F 
+  3EB3D412 761D05E5 A11A7BD8 5C33AC9D 5FA1CB9F 2553CA6C B27A7AEE 075E5FCE 
+  76379482 19CDBD29 69250A35 D3835DB0 6F3B2A1A FA7F2A5D 470EA3D1 2D470CC9 
+  E611A47D 0593B27A A5B4FC63 C19EA97C 3B2BD079 84A9DDD5 BAE5E7F6 9B47E183 
+  2D68CE10 FB28140A 382EAFED 157C5D61 8CA3D0F0 73492C1F 0E065245 FCC1D82C 
+  CE1D2F48 9E3B1DB1 D28546A2 01354616 CC47F17B E96A1834 C68B3AEB 7BB7354F 
+  78EFD360 3B26E621 2999EACE 762CAB6D 7DBF3467 9F438C2A C4CF6CE1 63EC65D2 
+  049F5FED 442328A7 D511FA32 7EC82425 1331510F B7FF20A2 B92E9F7F 8611D1D1 
+  43C19432 90010203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 14BEDC7D 9BD2672B AF8255C4 E67F06FA 101D603D 
+  6C301D06 03551D0E 04160414 BEDC7D9B D2672BAF 8255C4E6 7F06FA10 1D603D6C 
+  300D0609 2A864886 F70D0101 05050003 82010100 20B91193 48704118 ABF76720 
+  D8D995F5 34B770A8 91571850 02793443 CE5D00B4 72BB11BE BBB79B29 ABE4B872 
+  83DE86B7 54538A8C CA3A8034 6A51F73A 57F62143 6FEB0340 C07902EB 7AC4E7C6 
+  5B701DFF 1B10CA8E F3856429 0BA973C4 B689C3FA 5B017F84 6D42FE47 DBB8F09C 
+  B2FEA5E0 E2BFA077 2EDEFF95 DBFB55CA 30115707 8FF41A57 8FC4FC34 77A6C0FD 
+  0F708DFB 18A59741 44EE6596 5CB77723 673D7070 4583D971 FE1CF5A0 C7099288 
+  55919C42 01550CF6 B9AD701E 06D0BA6B EA38D82C CE825ACF 870BF951 42670596 
+  33BD7AA0 5FA8D0A2 4752CDCD DE5C86FC FC09F47D F44B86C0 A72DA11B 6BAA4AA6 
+  1E8E9481 BF5E38C8 4BC3DE7A 06BB4754 5F9AC2EE
+  quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D 
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE 
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC 
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B 
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C 
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B 
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB 
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
+  D697DF7F 28
+  quit
+!
+license udi pid CSR1000V sn 9Y4GDZPVB7G
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+memory free low-watermark processor 80526
 !
 !
 !
@@ -47,7 +146,14 @@ multilink bundle-name authenticated
 redundancy
 !
 !
+!
+!
+!
+!
+cdp run
 ! 
+!
+!
 !
 !
 !
@@ -71,6 +177,9 @@ crypto ipsec profile DMVPN_PROFILE
 !
 !
 !
+! 
+! 
+!
 !
 interface Loopback0
  no shutdown
@@ -89,98 +198,79 @@ interface Tunnel0
  ip nhrp holdtime 300
  ip nhrp nhs 155.1.0.5
  ip tcp adjust-mss 1360
- tunnel source GigabitEthernet0/1.100
+ tunnel source GigabitEthernet1.100
  tunnel mode gre multipoint
  tunnel key 150
  tunnel protection ipsec profile DMVPN_PROFILE
 !
-interface GigabitEthernet0/0
+interface GigabitEthernet1
  no shutdown
  no ip address
- shutdown
- duplex auto
- speed auto
- media-type rj45
+ negotiation auto
+ cdp enable
+ no mop enabled
+ no mop sysid
 !
-interface GigabitEthernet0/1
- no shutdown
- no ip address
- duplex full
- speed auto
- media-type rj45
-!
-interface GigabitEthernet0/1.23
+interface GigabitEthernet1.23
  no shutdown
  encapsulation dot1Q 23
  ip address 155.1.23.2 255.255.255.0
  ipv6 address 2001:155:1:23::2/64
 !
-interface GigabitEthernet0/1.100
+interface GigabitEthernet1.100
  no shutdown
  encapsulation dot1Q 100
  ip address 169.254.100.2 255.255.255.0
  ipv6 address 2001:169:254:100::2/64
 !
-interface GigabitEthernet0/2
+interface GigabitEthernet2
  no shutdown
  no ip address
  shutdown
- duplex auto
- speed auto
- media-type rj45
+ negotiation auto
+ no mop enabled
+ no mop sysid
 !
-interface GigabitEthernet0/3
+interface GigabitEthernet3
  no shutdown
  no ip address
  shutdown
- duplex auto
- speed auto
- media-type rj45
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ no shutdown
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
 !
 ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
 !
 !
-no ip http server
-no ip http secure-server
+!
+!
 !
 !
 !
 !
 control-plane
 !
-banner exec ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
-banner incoming ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
-banner login ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
+!
+!
+!
+!
 !
 line con 0
  exec-timeout 0 0
  privilege level 15
  logging synchronous
-line aux 0
+ stopbits 1
 line vty 0 4
  exec-timeout 0 0
  privilege level 15
@@ -188,9 +278,13 @@ line vty 0 4
  transport input all
 line vty 5 15
  exec-timeout 0 0
+ privilege level 15
  no login
  transport input all
 !
-no scheduler allocate
+!
+!
+!
+!
 !
 end

@@ -1,12 +1,13 @@
 !
-! Last configuration change at 18:20:00 UTC Sun Dec 31 2017
-!
-version 15.6
+version 16.11
 no service timestamps debug uptime
 no service timestamps log uptime
-no service password-encryption
+service call-home
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console serial
 !
-hostname R5
+hostname CSR-R5
 !
 boot-start-marker
 boot-end-marker
@@ -14,18 +15,14 @@ boot-end-marker
 !
 !
 no aaa new-model
-ethernet lmi ce
-!
-!
-!
-mmi polling-interval 60
-no mmi auto-configure
-no mmi pvc
-mmi snmp-timeout 180
-!
-!
-!
-!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+  no destination transport-method email
 !
 !
 !
@@ -34,12 +31,114 @@ mmi snmp-timeout 180
 !
 !
 no ip domain lookup
-ip cef
-ipv6 unicast-routing
-ipv6 cef
 !
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+!
+ipv6 unicast-routing
 multilink bundle-name authenticated
 !
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2164301030
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2164301030
+ revocation-check none
+ rsakeypair TP-self-signed-2164301030
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-2164301030
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32313634 33303130 3330301E 170D3138 31323133 31303531 
+  32335A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 31363433 
+  30313033 30308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100895E E95B527D 77D9E346 49945736 2324EEB5 268C0FD1 45827C32 
+  7222A8B5 B2204183 7EE41EAD AC4C5778 9A6E6FB9 B4DFEF66 2EABB7DE 2A3DF17F 
+  5A8B38C1 250A5E2E 1512C040 69383A9C 1C215387 D1063200 7BC6B144 9A7FEDF6 
+  DD30902A 5560DF49 342EA814 469E9A50 69E8E7E3 7D5EF3D4 23634397 D4D404DA 
+  13C9282F 1E09586F 35C80E37 CA9DAAAF 428AE11D E116256B 4F0519E7 75939334 
+  B8A57685 AA8D9E86 FED77CF2 C59D53ED 1213F0C0 A1B5C15D B6558879 E2DDF7EE 
+  D589E0F5 0125DB88 B63C2D70 AFD1B89E 24A7E36E 9203DDC1 2C7540F0 DABFBD98 
+  B464C21D 946A24AB 912EAFF9 A5CE2628 186B51D1 BC91CBE0 6D50291A 77C56AEB 
+  7F964277 E20D0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 140B5A11 AB514C67 4C31EF01 F7B2705F 2AC576A5 
+  94301D06 03551D0E 04160414 0B5A11AB 514C674C 31EF01F7 B2705F2A C576A594 
+  300D0609 2A864886 F70D0101 05050003 82010100 4E29BF9E D9E9DAB0 F11FEDC3 
+  EA55F3FF 5C049626 2A5BF376 61A29FD8 F51A580A C84467F7 95BB7FF8 759D4C01 
+  349FB012 6E5FF675 F5504E25 DE06FD96 077F2A91 E8105843 152389D5 92CD0691 
+  63A353BD 7B2E2AAD 5288A5FF F1DD4E56 94F03FE0 F4C9B507 E67B370F 18419C8D 
+  F6A4B5D3 A42B452C 96D6047A B44FB2B0 ACC31BC2 8830598B 16BFADC2 2349388F 
+  FA1A6A08 91273A2E B4A4C5E4 180E8B78 508E301E 0DDF5940 3112A6EC AFAC5831 
+  2684CCBE A7B54D03 19CDC9DF A52245A6 FD1CFAE6 2F798D43 E68DBF69 C3D0F027 
+  C077DE05 598D7CB3 A95E3CF5 65382345 31E59BA7 87195E65 3106268E 266FF138 
+  547F3F01 2E3D44AD 389D449E D0FBEDD2 CF2E3393
+  quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D 
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE 
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC 
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B 
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C 
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B 
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB 
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
+  D697DF7F 28
+  quit
+!
+license udi pid CSR1000V sn 9BIY0CU6ROC
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+memory free low-watermark processor 80526
 !
 !
 !
@@ -47,7 +146,14 @@ multilink bundle-name authenticated
 redundancy
 !
 !
+!
+!
+!
+!
+cdp run
 ! 
+!
+!
 !
 !
 !
@@ -71,6 +177,9 @@ crypto ipsec profile DMVPN_PROFILE
 !
 !
 !
+! 
+! 
+!
 !
 interface Loopback0
  no shutdown
@@ -83,114 +192,94 @@ interface Tunnel0
  no ip redirects
  ip mtu 1400
  ip nhrp authentication NHRPPASS
- ip nhrp map multicast dynamic
  ip nhrp network-id 1
  ip tcp adjust-mss 1360
  delay 1000
- tunnel source GigabitEthernet0/1.100
+ tunnel source GigabitEthernet1.100
  tunnel mode gre multipoint
  tunnel key 150
  tunnel protection ipsec profile DMVPN_PROFILE
 !
-interface GigabitEthernet0/0
+interface GigabitEthernet1
  no shutdown
  no ip address
- shutdown
- duplex auto
- speed auto
- media-type rj45
+ negotiation auto
+ cdp enable
+ no mop enabled
+ no mop sysid
 !
-interface GigabitEthernet0/1
- no shutdown
- no ip address
- duplex full
- speed auto
- media-type rj45
-!
-interface GigabitEthernet0/1.5
+interface GigabitEthernet1.5
  no shutdown
  encapsulation dot1Q 5
  ip address 155.1.5.5 255.255.255.0
  ipv6 address 2001:155:1:5::5/64
 !
-interface GigabitEthernet0/1.45
+interface GigabitEthernet1.45
  no shutdown
  encapsulation dot1Q 45
  ip address 155.1.45.5 255.255.255.0
  ipv6 address 2001:155:1:45::5/64
 !
-interface GigabitEthernet0/1.58
+interface GigabitEthernet1.58
  no shutdown
  encapsulation dot1Q 58
  ip address 155.1.58.5 255.255.255.0
  ipv6 address 2001:155:1:58::5/64
 !
-interface GigabitEthernet0/1.100
+interface GigabitEthernet1.100
  no shutdown
  encapsulation dot1Q 100
  ip address 169.254.100.5 255.255.255.0
  ipv6 address 2001:169:254:100::5/64
 !
-interface GigabitEthernet0/2
+interface GigabitEthernet2
  no shutdown
  no ip address
  shutdown
- duplex auto
- speed auto
- media-type rj45
+ negotiation auto
+ no mop enabled
+ no mop sysid
 !
-interface GigabitEthernet0/3
+interface GigabitEthernet3
  no shutdown
  no ip address
  shutdown
- duplex auto
- speed auto
- media-type rj45
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ no shutdown
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
 !
 ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
 !
 !
-no ip http server
-no ip http secure-server
+!
+!
 !
 !
 !
 !
 control-plane
 !
-banner exec ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
-banner incoming ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
-banner login ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
+!
+!
+!
+!
 !
 line con 0
  exec-timeout 0 0
  privilege level 15
  logging synchronous
-line aux 0
+ stopbits 1
 line vty 0 4
  exec-timeout 0 0
  privilege level 15
@@ -198,9 +287,13 @@ line vty 0 4
  transport input all
 line vty 5 15
  exec-timeout 0 0
+ privilege level 15
  no login
  transport input all
 !
-no scheduler allocate
+!
+!
+!
+!
 !
 end
