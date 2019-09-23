@@ -1,0 +1,5 @@
+If you want to successfully sell a design plan that incorporates solutions from Juniper Networks, you will need to know your competition, what they offer, and how their solution matches up with what you have to offer.
+
+In some instances, the customer might only be familiar with proprietary systems or protocols due to their experience with a competitor. In these situations, you can often counter with a similar solution that Juniper Networks offers, but is compliant with standards that will allow for greater scalability in the future.
+
+In some situations, you will need to build a design around an existing solution from a competitor. You might need to design a solution that can live in harmony with other vendors. This means switching from proprietary services to using more standardized protocols. In all cases, you should be able to understand and easily explain how your design will respond to questions regarding the competition.
