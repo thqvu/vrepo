@@ -1,0 +1,71 @@
+The RFP can include a variety of elements that describe the company and the business they are in.
+
+The business summary will likely include a description of the network design project and objectives describing the business and technical goals of the new design.
+
+The general overview will likely include planning for future growth and an explanation for why the new design is required. If any of these key elements are missing from the project description, you should follow up and get more information so that you can respond properly to the RFP.
+
+Example: Project Description
+
+- Watch My Shows, Inc. is a streaming media provider for subscribers in North America. Watch My Shows, Inc. is planning to expand in parts of Europe in the next two years. Watch My Shows, Inc. is soliciting proposals from networking and telecommunications vendors to design and install a complete "end-to-end" certified system for transmission of voice and data signals in a newly acquired office space in Brussels, Belgium.
+
+This short description gives us a high-level idea of what the customer is looking for. Note that the RFP typically lists several pages of requested information. The project summary is just a small part of the RFP.
+
+The RFP typically includes several environmental elements, including Layer 1 infrastructure details, such as power supply, voltage, Power over Ethernet (PoE) requirements, and so forth.
+
+A campus-based RFP might include several details about the facilities, number of users, and types of connections that users will make to connect to the network.
+
+In the environmental requirements section of the RFP, you begin to understand the scope of the project.
+
+Example: Server Room Wiring
+
+- This room will be the central point for all data and voice terminations to patch panels. There will also be some custom Wiring from the server racks to patch panels that would have to be considered in this room.
+The architectural layout of the facility is in the schematic design phase and will not be finalized prior to execution of the lease.
+
+Note that, based on the description, the server room layout has not been finalized and might not be ready before your proposal is submitted. Sometimes you will not have all the information you need when you respond to the RFP. Although the architectural design of the site is still a work in progress, you can still build a response based on the number of connections, throughput, and bandwidth requirements.
+
+Many of today's networks are large in scale and complex in nature. Most customers will likely express the requirement that their network be easy to maintain and troubleshoot.
+
+The customer will likely require compatibility for future expansion and new technologies.
+
+You should always consider a modular design to support these requirements when responding to the RFP.
+
+In a modular design, each device has a clearly assigned function.
+
+Example: Hierarchical Design 
+
+- Watch My Shows, Inc. will initially hire approximately 500 employees; how ever, it is expected that up to 1500 employees will be hired within five years from when Watch My Shows, Inc. launches in Europe. The network must support the addition of new floor space, new services, as well as expansion to remote branch locations. The network must be simple to troubleshoot and maintain throughout the lifespan of the network.
+
+In the displayed example, the customer is not directly asking for a modular design; however, the customer is expecting that the business will triple in size over the next five years expanding into several branch offices. The customer will need to easily expand the network to accommodate the growth of the business.
+A modular design will benefit the customer because, as more job roles are added and office space is opened, the network can be expanded based on the functions of the existing network. There is no need to create something new or rewrite something that already exists.
+
+Connectivity and throughput requirements vary from site to site.
+
+Customers dealing with older infrastructure might prefer wireless connections because the cost of running wired connections to each workstation could be too greate. Most customers will tell you that speed is critical to business success. After all, who wants to work on a slow network?
+
+Some information on required network speeds might be defined in the RFP, but you might need to provide the customer with a traffic analysis to fully understand what equipment is required to support the customer's goals.
+
+This information is typically collected as you assess the customer's existing network environment. Scoping the network is discussed in detail later in the module.
+
+Example: Connectivity Requirements
+
+- The system shall be designed, installed, tested to the proposed specifications, certified to a 1 Gb wire speed to the desktop and 300 Mbps speeds to wireless devices.
+
+The displayed example provides only a brief explanation of what the customer requires. Providing gigabit wire speeds to the desktop and 300 Mbps speeds to wireless devices seems simple enough, but how complex will the network be to provide those speeds to all users without performance degradation? Will there be enough bandwidth for all users on the network? Do these requirements include remote users working from home or offices with slower network speeds?
+
+The answers will depend on several factors, including the applications used, services offered, and available resources.
+
+As discussed previously, understanding the answers to these questions requires additional research, traffic analysis, and even interviews with the customer's employees. In addition, you should assemble your own team of subject matter experts to assist you in responding to the RFP.
+
+In addition to the obvious speed and throughput requirements most customers expect, you can also expect to see requirements for business continuity. What happens to the network if a key device stops responding?
+
+Will users continue to access the network without interruption? Are certain applications more critical than others and therefore require priority during peak times?
+
+You will certainly expect to see requirements for network efficiency, quality of service (QoS), and load balancing solutions in most RFPs you receive.
+
+Example: Additional Considerations
+
+- The system shall include high availability, redundancy, and disaster recovery to support any hardware or software failures.
+
+The example displayed is a simple request that high availability be included in the RFP response. Often, the initial RFP will have only high-level requests for certain features in the design. Some RFPs will have more specific requests to accommodate specific protocols or services that already exist in the network. Your job will be to find out what exactly is required so you can respond accordingly without eliminating yourself from consideration.
+
+The RFP might request support for proprietary services used by specific vendors that Juniper Networks does not support. Respond to these requests by offering standardized solutions using Juniper Networks devices that can also inter-operate with other vendors. Always offer solutions by focusing on what your solution can do rather than what it does not support.

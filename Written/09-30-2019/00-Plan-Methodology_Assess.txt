@@ -1,0 +1,8 @@
+Plan -  > Assess
+        > Requirements
+        > Scope
+        > Data Analysis
+
+Before any network can be designed, you must first assess the customer's enviroment.
+
+When assessing a customer's enviroment, you must determine what the customer requirements and scope are for the design project, and you must analyze the data provided to you to build a scalable network that will last well into the future.
