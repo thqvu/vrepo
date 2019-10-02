@@ -1,0 +1,5 @@
+The Palo Alto Networks Security Operating Platform is a prevention-focused architecture that provides visibility into all traffic and is natively integrated in such a way that no gaps exist and context is provided so you have to react only to the threats that are critically important.
+
+The Security Operating Platform is highly automated to reduce or remove manual response and enables you to drive seamless policy throughout your organization to reduce your attack surface and eliminate unnecessary risk.
+
+The platform safely enables all applications through granular use of controls and prevention of known and unknown cyberthreats for all users on any device across any network.
