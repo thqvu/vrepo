@@ -1,0 +1,13 @@
+The Cyber-Attack Lifecycle is a sequence of events that an attacker goes through to infiltrate a network and exfiltrate data from it. A block of just one stage in this lifecycle will protect a company's network from attack.
+
+- Reconnaissance: Attackers carefully plan their attacks, just as burglars and thieves do. They research, identify, and select targets, often using phishing tactics or extracting public information from an employee's LinkedIn profile or from corporate websites. These criminals also scan for network vulnerabilities and services or applications that they can exploit.
+
+- Weaponization and Delivery: Next, the attackers determine which methods to use in order to deliver malicious payloads. They may choose to embed intruder code within seemingly innocuous files such as a PDF or Word document or email message. Or, for highly targeted attacks, attackers may craft deliverables to attract the specific interests of an individual.
+
+- Exploitation: An attacker now deploys an exploit kit or weaponized document. Deploying an exploit allows the attack to gain an initial entry point into the organization.
+
+- Installation: Attackers will seek to establish privileged operations, such as maintaining access, persistence, and escalating privileges.
+
+- Command and Control: Attackers establish a command channel back through the internet to a specific server so that they can communicate and pass data back and forth between infected devices and their own infrastructure.
+
+- Act on the Objective: Now that an attacker has persistence and ongoing communation, they will act upon their motivations in order to achieve their goal. Their motivation could be data exfiltration, destruction of critical infrastructure, to deface web property, or to create fear or the means for extortion.
