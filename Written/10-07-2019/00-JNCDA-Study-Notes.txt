@@ -1,0 +1,1467 @@
+Chapter 2 Network Design Fundamentals
+
+You are the Architect, so Your mission:
+-Assess the customer's current environment and its ability to satisfy their current business and technology requirements
+-identify the technology shortfalls that need to be addressed
+-Develop a core technology roadmap that will achieve the customer's required end-game environment
+-Evaluate what is necessary for migrating successfully from one environment to another
+-Create high-level architectural design and low-level detailed designs of networks devices, configurations, and interconnections
+
+Doing the research
+
+Who is the customer
+-The business and industry the customer is in
+-What sets the customer apart from competitors
+-What network design will meet your customer's approval
+
+Understanding your customer is key to a successful network design
+-Business requirements and goals
+-State of the current network environment
+-Analyze current and future network behaviour
+
+Engaging with the customer
+
+Becoming a key partner
+-Recognize and understand their management hierarchy
+-Know who makes the decisions
+-Work closely with the customer to learn their overall goals
+-Understand the criteria for a successful design
+-Know where the risks are and consequences for failure
+
+Expect some back and forth
+
+Tool Bag? Understand what Juniper can offer the customer is key to a successful design
+
+Routing Devices: ACX, LN, M, MX, T, PTX
+Switching Devices: EX, QFX, OCX Series
+Security: SRX100...SRX5800
+
+Management solutions: Junos Space, Juniper Networks Secure Analytics
+Understand partner solutions: Load Balancing, Secure Access, Access Control, Wireless
+
+Understanding the Competition: Know who your Competion is and Confidence Key
+
+Juniper's Lifecycle Service Approach: Plan (Assess,Design),Build (Deploy,Migrate) and Operate (Support,Optimize)
+
+Plan Methodology
+
+Assess->Requirements->Scope->Data Analysis
+Requirements: identify the technology shortfalls that need to be addressed
+Scope: Determine the scope of the design project; upgrading a existing network or creating an entirely new network?
+Data Analysis: Perform a data analysis to determine the condition of the current network and what improvements need to be made; How many users access the network internally and externally?
+
+Design->Logical Design->Physical Design
+
+Logical Design: High Level Design, protocols used, addressing, security, name conventions.It also might include WAN and service provider access
+
+Physical Design: Low Level Design,Physical devices, cabling, wiring considerations. Service Provider access should be determined by this point
+
+Chapter 3: Understanding Customer Requirements
+
+The Request for Proposal (RFP)
+
+Solicitation from the customer for a network design that typically includes:
+-A list of design requirements
+-Types of solutions the design must provide
+-Warranty requirements and legal terms
+
+The customer will often send the RFP to multiple vendors and
+-Use responses to compare competing proposals
+-Eliminate vendors who cannot meet their requirements
+
+In some cases, you might receive a Request for Information (RFI), rather than an RFP.RFI typically only covers the technical aspects of the design request.
+
+RFP Key Elements
+
+Business requirements
+-Summary of what type of business the customer is in
+-Vision for future growth
+-Explanation of why a new design is required
+
+Environmental requirements
+-facility specifications
+-Number of users and workstations requirements
+-Server room specifications
+
+Modular requirements
+-Hierarchical design considerations
+-Reduction of information within each module
+-Functionality of each module within the design
+
+In a modular design, each device has a clearly assigned function
+
+Connectivity and throughput requirements
+-Number of wireless and wired connections needed
+-Traffic analysis
+-Calculations for theoretical and overhead traffic
+
+Business continuity
+-Network efficiency
+-Quality of service requirements
+-Load balanced and highly available networks
+
+Always offer solutions by focusing on what your solution can do rather than what it does not support
+
+Responding to the RFP
+
+Tips for a successful response:attention to the details,using the format of the customer, highlight benefits of your design
+
+Response should always include:
+-Executive Summary
+-A network topology
+-Information on the devices, protocols, technologies forming the design
+-An implementation plan
+-Training
+-A plan for supporting and servicing the design
+
+Defining Key Stakeholders
+
+Understand the Corporate Structure:Management Hierarchy,Decision Makers, Corporate structure, Who has final say?
+Asking the right People the Right Questions:Business goals,Technical goals, Existing network details, Technical requirements
+Understanding Corporate Politics:Hidden agendas,Department relations, Personnel issues,Business policies
+
+Gathering Data
+
+Questionnaires, Surveys, Interviews, Job Aids
+
+Job Aids:Documentation and instructions allowing individuals to quickly access the information needed to perform a task
+
+Traffic flow analysis
+-Capacity
+-Utilization
+-Throughput
+-Offered load
+-Efficiency
+-Latency
+
+You must determine the limitations to the current network and what is required for the new network to be successful
+
+Identifying Applications
+
+Identify applications the customer uses
+Include both existing and new applications
+Include user applications and system applications
+
+Understanding Scope
+
+Designing with modularity in mind will help you accommodate any network the customer has asked you to design
+
+Analyzing the Existing Environment
+-Working on greenfield projects (referred as design a network from a ground up)
+--New networks with or not restraints to consider
+--Next-generation networks created from the ground up
+--adding new network to an existing architecture
+
+-Upgrading existing networks
+--old gear to be replaced
+--legacy applications that are no longer use
+--out-of-date Designs that no longer make sense
+
+Identifying resources
+-Creating equipment lists
+--Bill of materials(BOM)
+--can be modular or multilevel in nature
+
+-Setting pricing and understanding budgets
+--Create a plan that matches the customer's budget
+--Consider all expenses such as staffing, testing and training
+--does your plan eliminate jobs and add personnel?
+
+More complex BOMs can be multilevel-or nested-lists whose parent devices are listed with a set of a child devices nested in two or more levels of detail.
+
+Chapter 4 Organizing the Data
+
+The data you have collected can be sorted into three main categories:customer data, customer requirements, and project boundaries
+
+Data analysis
+
+-Organizing the data can be based on:Functional area (campus, WAN, data center)
+-User groups (employees, guests, remote users)
+-Customer requirements
+
+Six main categories:Security, Availability, Scalability, Manageability, Performance, Budget
+
+Sample Security requirements:NAC,Management, Compliance, BYOD
+Sample Availability requirements:Archival and Backup, Resiliency, Failover, Capacity
+Sample Scalability requirements:User Base, Applications, Hardware, Performance
+Sample Manageability requirements:Monitoring, Automation, Configuration Management, Auditing
+Sample Performance requirements:Bandwidth, Latency, Quality of Service, Optimization
+
+Identifying Design Proposal Boundaries
+
+Some of the more common boundaries include:
+-Characterizing existing and future user groups, their respective applications, data flows, and data flow types
+-Identifying required network parts such as campus WAN, remote office locations, and the data center
+-Documenting the current environment
+-Determining budgetary constraints
+
+Identifying the unknown boundaries that exist. This might include hidden agendas from employees, governmental laws or statues that were not previously identified
+
+Greenfield Versus Brownfield
+
+Greenfield Deployments
+-More options to make design module and scalable
+-Very few restraints caused by existing network infrastructure
+
+Brownfield Deployments
+-More common and much more restrictive than Greenfields
+-Often require integration with other vendors
+
+User Groups and Applications
+
+Determine the types of users that will be accessing the network and what applications they use, enforcing security whilst maintaining accessibility, ease of use, and performance benchmarks will be a top priority
+
+Considering Data Flow
+
+You must identify the types of communication that happen-or will happen-on the network. Determining the traffic patterns currently in sue-as well as calculating the data flow for future network
+
+Traffic patterns:user to user;user to machine;machine to machine
+
+Functional Parts of the Network
+
+Three main functional areas in network design, including campus (and branch), WAN, and data center connections
+
+Exceeding Know Boundaries
+
+Provide additional value:Make a proposal that goes beyond the know boundaries and stated customer requirements
+Provide Options:Good;Better;Best
+
+Design Proposal Considerations
+
+When creating design proposals:
+-Keep your design simple
+-Create the logical before the physical structure
+-Consider security throughout the design process
+-Understand the design boundaries and scope
+-Remember that every choice has a trade-off
+-Ensure that your proposal is clearly documented
+
+Keeping Things Simple
+-Overly complex designs and customer perception
+-Considering modularity in network design
+
+Incorporating Security
+
+Every functional area of your network topology will require some level of security within it.
+
+Choices and Trade-offs
+
+Security
+Availability
+Scalability
+Manageability
+Performance
+Budget
+
+You should be aware that each choice you make will include certain trade-offs.For example, implementing security can affect performance
+
+Capacity Planning
+
+Consider these steps:
+1.Form a discussion groups
+2.Quantify user behavior
+3.Quantify application behavior
+4.Determine baseline existing network
+5.Make Traffic projections:capture data of bandwidth utilization by packet type and protocol,packet and frame size distribution,, error/collision rates
+6.Summarize input data for design process
+
+Design Stages-Design Specification
+
+Detail document of the design
+-Acts as a benchmark for design changes
+-Final design choices and changes need justification and documenting
+-Should include change history to aid maintenance
+-Used for the implementation
+
+Chapter 5: Securing the Network
+
+Evolution of Network Security
+
+Remote access, wireless devices,virtual servers, external hard drives and USB sticks are attack vector
+
+Security Threats Facing Networks Today
+
+Hackers,Spies,User authentication,Viruses, Worms, Trojans, Wired Users, BYOD, Guest users, SQL Injection, Password Cracking, DDoS
+
+Campus and Branch
+
+Common security requirements:
+-User authentication-Access control
+-Firewall and zone-based segmentation
+-IDP
+-UTM
+-Point-of-sale (PoS) compliance (typically branch only)
+
+Does the customer have a compliance reason for security?
+-PCI-compliance, SOX, and so on-How much access do the users need?
+-Will full Internet access be required?
+-Will users need to authenticate for network access
+
+How much security can the enterprise manage?
+
+Context Awareness and Authentication
+
+Which user?What application?Which device?Which location?
+
+
+Authentication
+-Wired and wireless authentication
+--802.1x, EAP but other methods might be used
+
+-Enables role-based access control
+--Allows access to resources or networks based on user-credentials such as group membership
+--Enables detailed logging and accounting of user activity
+Authenticate every device every time
+--Enables the highest levels of network security
+--Must support smartphone and tablet users
+
+Network Access Control (NAC)
+
+NAC has become essential for enterprise networks
+Increasing number of remote workers, contract workers, and other guests on the network
+
+Defining Security Policies
+
+Policies are needed to communicate between zones
+Policy Components:Zones, Source, Destination, application and match criteria
+Authentication:will policy require firewall, UAC, or VPN authentication
+Do not forget about deny rules and placement
+
+Security Policy Best Practices
+
+Summarize IP addressing wherever possible
+Use address-sets and service-groups
+Add a deny all rule with session logging last
+
+IDP Best Practices
+
+Security Policies:On which policies should we enable IDP
+Recommended signatures
+Custom signature groups
+
+You should determine to which security policies you want to enable IDP
+
+-Detect-only or drop traffic
+--Might want to start out in detect-only mode
+--Analyze real-world traffic for false-positives
+--User custom signature groups that exclude false-positives
+--Change configuration to begin dropping attacks
+
+UTM Best practices
+
+Antivirus
+URL filtering
+Antispam
+Intrusion Prevention
+
+Where will UTM be enforced?
+-From branch users and guests to internet?
+-From internet to branch guest users?
+-From branch users to centralized services?
+-Inbound traffic from data center to branch?
+-Traffic between branches?
+
+Security Policies:On which ones should we enable UTM?
+Antivirus UTM policies: Outbound (to Internet) matching HTTP and FTP
+
+URL filtering UTM policies:Typically enabled on outbound (to Internet) Web traffic only
+
+PCI Compliance
+
+Main requirements for designing a PCI compliant solution
+-Devices processing transactions must be isolated from other network nodes
+-Account information cannot be stored or transmitted in unsecure fashions
+-Firewall policy, reporting, and centralized management are key criteria
+-Authenticate network access
+
+Being able to demonstrate PCI compliance to the auditors is important for a yearly report on compliance (ROC)
+
+WAN Security
+
+Identify the untrusted domains and determine plan to monitor, manage, and mitigate all security risks
+
+Public Model
+-Service Provider provides transparent MPLS service to the customer
+-No management required by the customer
+-Security through MPLS
+
+
+Hybrid Model
+-Customer manages CPE devices:traffic is again secured through MPLS
+-Home users and remote sites are secured using IPsec tunnels
+
+Data Center Security Requirements
+
+Requirements
+-Scalable performance
+-Interface flexibility:Scale the Firewall without re-architecting the network
+-System and network resiliency:Carrier-class reliability;separation of data and control planes
+-Network segmentation capabilities
+-Flexible network integration
+
+Data Center Security Challenges
+
+Performance requirements:Traffic throughout, connection per second,sustained total connections, latency
+Resiliency requirements:
+Scalability:
+Network Integration:Routing and Virtualization capabilities
+
+DC Security Design Considerations
+
+Considerations:
+-Consolidation and virtualization
+-Security versus performance tradeoffs
+-On-demand resource allocation
+-Polymorphic nature of new applications
+-Evolving threat landscape
+-Control over all the traffic client to server, server to server, and server to client
+-High performance and security at scale
+-Application Layer visibility and control
+-Identity-aware dynamic security protection
+-Consistent security posture in on-demand resource allocation environments
+-Unified management and monitoring
+
+Incorporating Data Center Security
+
+Security should be incorporated at the perimeter of the data center for north and south traffic flows and between the servers for west and east traffic flows
+
+What is Junos Space? A next-generation application platform designed to managed next-generation networks
+-Simplifies network operations
+-Scales services
+-Automates support
+
+Installable applications within Junos Space:Network Director,Edges Services Director,Security Director,Content Director,Virtual Director,Services Activation Director, Service Insight, Service Now
+
+Security Director - Deploy end-to-end security services on network elements (Firewall policy, IPS, NAT, VPN,...)
+
+Virtual Director- Deploy, manage, and monitor vSRX instances
+
+Chapter 6: Creating the Design-Campus
+
+Campus Topologies
+-Horizontal
+-Vertical
+-Metro Campus
+-Widely distributed
+-Hub and Satellite
+
+Legacy 3-Tier Design
+
+-Complex
+-Inefficient
+-Costly
+-Oversubscribed
+
+Consolidating Security
+
+-Eliminates multiple devices
+-Improves efficiency
+-Lower latency
+-Lower power,cooling, and space costs
+
+Collapsing Layers
+
+-Simplifies operations
+-Reduces the number of devices
+-Reduced number of uplinks
+-Reduced latency
+
+Design Guidelines for the Campus
+
+General guidelines to consider when designing campus networks include:
+-Ensure design is secure and protects customer resources
+-Ensure design allows for network resource availability
+-Ensure design is easy to deploy and operate
+--Minimal configuration required
+--Easily supports deployment of advanced services such as video, UC and virtualization
+--Limits the number id platforms to learn, maintain, and spare
+--Eliminates blocked links caused by STP and FHRP
+
+Knowing the Trends and Requirements
+User driven wireless networking requirements:
+-1 AP per 10-15 users or per 400 square feet of coverage area
+-Reserve 10% of wired ports for wireless APs
+
+Security Through Isolation
+
+BYOD Through Isolation
+
+Place guest users and devices in an isolated VLAN, such as a guest VLAN, and ideally a unique routing instance
+
+VLAN Connectivity
+Create a standard VLAN schema used on all access switches
+
+Subnet Design
+Device  Naming Conventions
+
+
+Access Control Design
+-802.1x EAP provides access control
+--802.1x can be used to authenticate user ports
+--MAC authentication can be used to authenticate other devices (that do not support 802.1x)
+
+
+single mode authenticates only the first supplicant
+single-secure mode allows only one supplicant to connect to the port
+multiple mode allows multiples supplicants.Each supplicant is authenticated individually
+
+Using the Top-Down Design Approach
+Knowing users, applications, traffic types, and traffic patterns can help determine the best network design
+
+
+Over Subscription ratios
+
+Over subscription ratios identify the ingress to egress link bandwidth in a south to north direction in the network
+
+Switches are generally categorized has having a non-blocking architecture or a blocking architectures.A non-blocking architecture means that the switch's internal resources can accommodate ingress and egress traffic flows at their maximum rate.
+
+Some Architects use a 20:1 ratio for the access:distribution uplink as a general starting point.
+
+Campus Core:Legacy Campus Architecture
+
+-Oversubscribed interfaces require additional links
+-Each wiring closet and each aggregation core device must be managed
+-Can be complex to manage and troubleshoot
+
+Common Configuration Scenarios
+
+Layer 2 Access Looped Topology
+Layer 2 Access Loop-Free Topology
+Layer 3 Access Loop-free Topology
+
+Improving Looped Layer-2 Access Design
+
+Physical Topology No Virtual Chassis
+Logical Topology Virtual Chassis at Aggregation
+Logical Topology Virtual Chassis at Aggregation and Access
+
+Improving Loop-Free Layer-2 Access Design
+
+Physical Topology No Virtual Chassis
+Logical Topology Virtual Chassis at Aggregation
+Logical Topology Virtual Chassis at Aggregation and Access
+
+Improving Loop-Free Layer-3 Access Design
+
+Physical Topology No Virtual Chassis -all paths forwarding (OSPF ECMP), fast convergence, L3 license costs?
+Logical Topology Virtual Chassis at Aggregation - all links forwarding (LAG)
+Logical Topology Virtual Chassis at Aggregation and Access - Fewer unique access switch configurations
+
+Spanning-tree protocols still required if access layer must interface with traditional tiered environment, for example migration or brownfield expansion scenarios
+
+Root Bridge Placement
+Spanning Tree Protection features:root protection,bpdu protection,loop protection
+
+Chapter 7:Creating the Design-WAN
+
+Wide Area Network Defined
+
+A wide area network (WAN) is a network covering a broad and geographically disperse area that is used to interconnect business locations and resources.
+
+Enterprise WAN connectivity Functions
+
+Internet Edge, WAN(Branch) Aggregation, Private WAN, Data Center Interconnect
+
+Internet Edge
+The internet edge function is typically found in the campus, branch, and data center environments
+
+WAN aggregation
+The WAN aggregation function connects remote branch offices to the main campus network
+
+Private WAN
+The private WAN function connects all enterprise sites and server as the corporate-managed backbone
+
+
+Data Center Interconnect
+The data center interconnect function connects all corporate data center locations
+-disaster recovery/business continuity
+-Data Center consolidation and virtualization
+-Geo-clustering
+-Layer 2 extensions for any reason
+
+Enterprise WAN Design Goals
+
+Should be:
+-Easy to deploy
+-Flexible and Scalable
+-Resilient and Secure
+-Easy to Manage
+-Service Ready
+
+Connectivity Considerations
+What WAN connectivity options are available?
+Where will a backup WAN connection be required?
+What type of WAN connectivity will be used?Private WAN (multiple classes of service);Public Internet;Provider-Managed MPLS Service (4 classes of service typically available)
+
+WAN Device Roles
+
+WAN devices at the hub location perform on the three roles depending on the WAN requirements:
+-WAN aggregation
+-Internet Gateway
+-VPN Termination
+
+Determining Throughput Requirements
+
+Among other things, the number of users and devices as well the applications and their associated traffic flows determine the throughout requirements.
+
+Performing Considerations
+
+The speed and latency of the WAN are often the main bottleneck between sites in an enterprise network
+
+Note that smaller packets such as voice and video will impact performance the most;therefore when evaluating a router's performance, we recommend using internet mix (IMIX) which is a mix of packet sizes
+
+Consider the following when designing a flexible  branch network:
+-Extra capacity can be added on the same platform or by adding additional devices without disrupting the network
+-Flexibility to add feature support in the future such as different dynamic path discovery protocols
+-Service flexibility to facilitate the introduction of services such as firewall or IPS on same platform
+-Different network virtualization techniques;and
+-Advanced QoS functionalities
+
+Flexibility can come with higher capital expenditures (CapEx) initially. However, it provides both lower CapEx and operational expenditures (OpEx) in the long term.
+
+VPN Design Considerations
+
+Tunneling packets in IPsec increases packet size
+-Additional overhead can exceed 36 bytes
+-Must limit the size of packets pre-encryption
+-Enforced by limiting the MTU size of IPsec traffic
+
+TCP-MSS size when using IPsec:
+-IPsec tunnel mode with no NAT transversal:1463 bytes;and
+-IPsec tunnel mode with NAT transversal (UDP):1400 bytes
+
+Using Virtual Routers
+
+Enterprise WAN have the ability to configure multiple routing instances, which are also know as virtual routers (VRs)
+
+Additional scenarios where traffic might have to be kept separate using routing instances include:
+-Merging organizations
+-Multi-tenant buildings
+-Secure facilities
+-College campuses
+
+
+Enterprise WAN:Active/Passive Design
+
+Enterprise WAN:Active/Active Design
+
+A WAN router at the remote branch location has two independent WAN connections to two distinct Layer 3 VPN service Providers. In this case each WAN connection is active.
+
+Enterprise WAN:VPN Design Options
+
+2-Tier Design- Branch to VPN Termination Device
+3-Tier Design- Branch to VPN Termination Device and Branch to Data Center
+Full Mesh Design- Branch to Branch, Branch to VPN Termination, and Branch to Data Center
+
+Chapter 8:Creating the Design-Data Center
+
+What is a Data Center? A closet, room, floor or entire facility that houses the computing resources and services used by a company
+
+The integrated components in a data center include:
+-WAN Domain
+-Security Domain
+-Layer 2 and Layer 3 Infrastructure Domain
+-Compute and Storage Domain
+-Management Domain
+ 
+
+Traditional Data Centers
+
+Most data center access switches are deployed at top-of-rack (TOR), bottom-of-rack (BOR), middle-of-row (MOR), or at end-of-row (EOR)
+
+The switches required in the aggregation and core tiers are typically line-rate, nonblocking switches.
+
+Recognizing the challenges
+
+Using a traditional hierarchical network design in the data center has a number of challenges including:
+-Limited scalability
+-Inefficient resource usage
+-Increased latency
+
+Assessing the Data Center Needs
+
+Some key questions to ask the customer include:
+-Does the data center deliver revenue generating services, or does it support your internal IT and campus environments?
+-In addition your main data center network, how many other data centers do you have? Will they interconnect?
+-What are the grow plans for the server farm for the next two years?Are they 1GBe or 10GBe server ports?
+-What are your performance requirements?
+-Do you need traffic separation or SLAs?
+
+Categorizing Data Centers
+-Data centers vary significantly in size, performance, function and requirements
+
+Enterprise IT-CapEx and OpEx,server virtualization
+Public Clouds-Massive scale, Scale out
+Performance Oriented-Low latency, Low jitter, High performance
+
+Design Guidelines and Requirements
+
+Common guidelines and requirements include:
+-Lower total cost of operations and investment protection
+--data center consolidation
+--energy and space
+
+-A simple, high performing and highly available environment
+--increased bandwidth and lower latency
+--high availability,reliability, and modular scalability
+--simpler, flatter network
+--Storage awareness, network convergence and virtualization
+
+-Aware of users and applications
+--Integration of user, application, network, and security policies
+--Layer 2 mobility throughout data center
+
+Understand the Trends
+
+DataCenters are moving to a service-centric structure:Storage Pool, Shared Services,Compute Pool
+
+Data Centers are moving to a collapsed structure
+
+Why do Traffic Patterns Matter? Determining the flow and patterns of traffic and the data center helps you identify capacity requirements!
+
+Building the Foundation
+-The size and characteristics of the access tier create the foundation of the entire data center network
+--The size of the aggregation and core tiers and the number of uplinks is largely determined by the size of the access tier
+
+Using Virtual Chassis in the Design
+-Inserting Virtual Chassis in to the design can:
+--Simplify the design and management operations
+--Improve scale, performance, and high availability
+--Reduce cost (cabling, uplinks and equipment)
+
+Virtual Chassis allow up to 10 switches, interconnected through using interchassis connections, 
+which may use either special backplane cables, or using 1GbE or 10GbE uplinks. The result is up to 10 line cards that, instead of fitting into a single chassis
+Depending on the design, a Spanning tree may not always be required because the member switches functions as a single switch
+
+This logical switch is maintained through a single active configuration file. Juniper recommends that all switches in a Virtual Chassis configuration be connected in a ring topology.
+
+Layer 2 at the Access Tier?
+
+Design considerations:
+-Architecture and protocol deployment options include Virtual Chassis, xSTP, LAG, and RTG
+-Challenges include spanning-tree scaling, fault containment, loop prevention, and blocked spanning-tree links
+
+Simplifying the Topology Further
+
+Use Virtual Chassis technology in the aggregation tier:
+-Eliminates or minimizes control plane complexity (such as STP or VRRP)
+-Utilizes all uplinks with standards-based, cross-chassis LAG (increases effective uplink bandwidth)
+
+Layer 3 at the Access Tier?
+Design considerations:
+-Architecture and protocol deployment options include Virtual Chassis, LGA, IGP, and BFD
+-Layer 2 domain and Layer 2 mobility are both restricted to a set of access elements
+
+Incorporating Security
+
+Security should be incorporated at the perimeter of the data center for north and south traffic flows and between the servers for west and east traffic flows
+
+Data Center Architectures
+
+Available today include:
+-Traditional Layer 2
+-Tier-MC-LAG
+-Virtual Chassis
+-Virtual Chassis Fabric
+-QFabric
+-Layer3 Clos
+
+Selecting a Design Profile Template
+
+Which profile best matches the data center? Transactional, Mid-Tier,Enterprise IT, HPC and Content Services Hosting
+The three key dimensions of a data center profile include:Functionality (routing,security and availability);Cost (capex,opex and TCO); Performance (latency, throughput and oversubscription)
+
+Chapter 9:Business Continuity and Network Enhancements
+
+What is Business Continuity?
+
+Business Continuity is:
+-An organization's need to ensure that essential functions can continue during and after a disaster
+-The prevention of interruption to mission-critical services
+-The ability to reestablish full functionality as quickly as possible following a disaster
+-Disaster recovery is not business continuity
+
+Business Continuity Planning
+
+Know your network
+-List all functions and services
+-Perform a Business Impact Analysis to determine:
+--Which functions and services are critical to the company survival
+--The cost of both partial and full outages-downtime equals money lost
+--How long could an outage be sustained?
+
+Risk Assessment
+-What hazards might affect your business?
+--IT failure/loss of data
+--Flooding
+--Power loss
+--Fire
+
+-Considered in terms of:
+--Impact
+--Likelihood
+
+
+Formulate the Plan
+-You cannot plan for everything
+-Use the risk assessment to plan for the most likely ones
+
+Test the Plan
+-Staff must be notified and know what is expected of them in response and recovery
+-After the testing
+--Review
+--Revise
+--Retest
+
+Resiliency
+What are the uptime requirements?
+-While the customer will typically say "no downtime", in reality there will always be some downtime
+-Customers plan for known and unknown downtime and target availability
+-99.9% availability tells them downtime cannot exceed 10 minutes per week average
+
+What can affect the uptime of the network?
+-Power outage
+-WAN failure
+-Device power supply failure
+-Device failure
+-Device firmware upgrades or reboots
+-Planned outages (for upgrades or migrations)
+
+Three Nines 99,9% availability means only 10 minutes of total downtime per week (planned and unplanned)
+
+Building a Highly Resilient Network
+
+Link-level redundancy (multiple WAN connections and physical uplinks)
+Device-level redundancy (redundant hot-swappable interfaces and power supplies)
+Physical device redundancy (redundant devices,VC)
+
+Link-Level Redundancy
+
+When does a second or backup WAN link make sense?
+-When your service provider cannot meet your SLA
+-when your enterprise relies on VoIP or Unified Communications
+-any time the cost of a second link is less then the cost of downtime
+
+Device Level Redundancy
+
+When does a redundant power supply or processing blade make sense?
+-Any time redundant power from two sources is provided at the customer premises
+--Connect each power supply to a separate power source
+-When a two-device HA solution is not used due to costs or complexity
+--A second power supply provides some guarantee against device failure
+
+Physical Device Redundancy
+When does a physical device redundancy make sense?
+-When a HA profile is desired (+3 nines or < 10 minutes per week)
+-Any time downtime cannot be afforded due to firmware upgrades or devices reboots
+-When zero impact to users and applications is required during failures
+
+Introducing VRRP
+
+Supported on EX Series and MX routers
+Is a standards-based RFC 2338
+
+Chassis Clustering
+
+Chassis clustering:
+-Connects two identical SRX Series devices into a single logical device
+-Uses a control link and a fabric link to connect the two devices
+
+Chassis Clustering: Basic Active/Standby
+
+
+The goal of a cluster is to be able to move or failover traffic flow from one box to other when needed. To help accomplish this, a special interface type is used:redundant ethernet (reth). A reth interface is a virtual interface.It is active on one of the two nodes only and it has the ability to move or failover to the other node.
+When a reth interface fails over to the other node, all its logical interfaces also failover and become active on the other node.
+
+Chassis Cluster Active/Standby with multiple reth interfaces
+Chassis Cluster Active/Standby wit LAG
+
+The Small Branch
+-SRX device handles routing and security while EX device does switching
+-Supports multiple WAN connections and WAN failover
+
+The HA Small Branch
+-SRX device HA cluster handles routing and security, while EX device cluster handles switching
+-Supports multiple WAN connections and WAN failover
+
+The HA Large Branch
+-Two-tier design uses routing between SRX devices and EX switches for HA
+-SRX device HA cluster handles routing and security, while EX device cluster handles switching
+-Supports multiple WAN connections and WAN failover
+
+Multichassis link aggregation allows you avoid the single point of failure scenario when a switch fails
+-LAG is split between two upstream switches appearing as a single switch to downstream device
+
+MC-LAG Positioning Scenarios
+-In data centers, MC-LAGs are commonly positioned between servers and the access switches (TORs) as well as between the distribution and core switches
+
+Campus Redundancy Best Practises
+Must include:
+-Highly available redundant LAN and wireless access for all applications
+-Network redundancy, multiple uplinks and network paths distributed across multiple devices
+-Hardware redundancy:Redundancy Routing Engines, network fabric, power, and fans
+-Redundant wireless access points are clustered and distributed to provide seamless roaming
+--Density of access point should provide wire-like reliability and performance
+
+What is a Virtual Chassis?
+VC provides 2+N control plane redundancy, where the two Routing Engines have the role of master and backup
+The VC has a dual-ring control ring control plane, which can be created either using a 128 Gbps VC fabric connection or over a link aggregation connection using a standard network port
+
+Virtual Chassis Design Considerations
+Virtual Chassis can include between two and ten switches:
+-Port density factor
+-Resilient factor-the more switches. the higher the availability
+-System cost-the more switches, the higher the cost
+
+Virtual Chassis Positioning:WAN
+-MX Series two member Virtual Chassis in the core
+--GRES and NSR must be enabled on both
+
+You can configure a VC on the following MX Series with Trio Modular Port Concentrator (MPC) Modular Interface Controller (MIC) interfaces (for configuration of VC ports) and dual Routing Engines:MX 240/480/960
+
+Virtual Chassis Positioning:Data Center
+Virtual Chassis:
+-Convenient placement leads to significant savings in cabling cost-TOR, BOR, across racks, and across rows
+
+What is a Virtual Chassis Fabric?
+
+-Two or more interconnected QFX Series, EX Series, or both switch types operating as a single VCF system
+--Four or more (up to 20) switches can be member (Leaf or Spine) in a VCF
+---QFX5100s can be placed in the Spine or Leaf location
+---QFX3500s, QFX3600s, and EX43000s should only be wired as Leaf devices in a mixed scenario
+
+Similarities Between VCF and VC
+A VCF is similar to a VC in several ways:
+-Member ID=FPC slot
+-Console and management sessions (SSH,Telnet) are redirect to the master RE
+-Uses VCCP to discover the fabric topology
+-Supports pre-provisioned and non-provisioned (dynamic) VCF enablement
+-When two or more local interconnects exist between two node, the interconnects are automatically placed into a LAG for load-balancing and redundancy
+
+
+Differences Between VCF and VC
+A VCF is different from a VC in several ways
+-Can support up to 20 members switches
+--It is the logical upgrade when a Virtual Chassis has reached its capacity
+-Uses a Spine and Leaf architecture instead of typical ring topology of a Virtual Chassis
+--Based on a Clos three stage (folded) switching fabric
+-When multiple paths exist between members, traffic is load balanced across the paths
+--In Virtual Chassis, only a single path is ever used (assumes VCP LAG bundle represents a single path)
+-Supports Automatic Provisioning
+
+VCF Best Practises
+
+Required for Juniper support
+-Spine nodes must be QFX5100 Series switches
+-RE role must only be assigned to Spine nodes
+-All leafs should be configured for line card role
+
+Other best practises include...
+-Every Leaf node should connect by VCP to every Spine node
+-Use either all 40Gbps VCPs or all 10Gbps VCPs
+-QFX5100-24q should be used as Spine node
+-Use either 2 or 4 Spine nodes (better load balancing)
+-All Spine nodes should be configured for RE role
+
+Quality of Service and Class of Service
+-The goal of QoS technology is to deliver predictable application performance throughout the network
+-Best effort delivery is not acceptable for time sensitive traffic such as voice and video
+-QoS is experienced end-to-end
+--A single hop without QoS can ruin the end-to-end QoS experience
+-CoS is the treatment of traffic at an individual node
+--Ultimate goal is to ensure consistent end-to-end QoS
+
+Understanding Packet Flow Across a Network
+-CoS examines traffic entering the edge of the network
+-Traffic is classified into different groups, each receiving different treatment
+-Traffic is reclassified as it leaves the network at the edge
+-CoS must be configured on each router in the network
+
+Network Traffic Congestion
+-Attributed to the hardware itself or to the network deployment
+-If a device does not have congestion management features, packets will be dropped or latency will be introduced
+-In a TCP/P network, dropped packets will be retransmitted, further increasing the network load
+-Traffic congestion management is especially important for time sensitive data and applications such as voice and video
+
+CoS in the Campus Network
+
+Why CoS in the Campus?
+-Convergence of voice and data networks
+-Differentiation between applications or types of users
+-Guaranteed bandwidth, especially on low-speed links
+
+CoS is recommended as a possible solution when users are experiencing the following:
+-Timeouts or long delays from applications
+-Voice or video quality issues
+--Choppy or clipped voice transmissions
+--Pixilation or constant buffering of video streams
+
+Junos CoS
+
+-The Junos OS provides a full-featured set of CoS mechanisms:
+--32 forwarding classes
+--8 queues
+--Supports a common set of features from the access layer to the core
+-Careful planning is required to ensure the CoS configuration is consistent across all devices
+-Equipment across the CoS domain must be interoperable
+
+Physical Layout
+Multiple physical divisions:
+-Referred to as segments, zones, cells, or pods
+
+Physical Considerations:
+-Placement of equipment
+-Cabling requirements and restrictions
+-Power and cooling requirements
+
+Layout options:
+-Top of rack (ToR)
+-Bottom of rack (BoR)
+-Middle of row (MoR)
+-End of row (EoR)
+
+Data Center Cabling
+-Cabling is a major cost in the data center
+-Any major change to the data center will involve the need to run new cable
+
+Planning for 40-Gigabit Ethernet and 100-Gigabit Ethernet
+-Higher bandwidth will be needed in the data center
+-The IEEE has defined standard for 40-Gigabit and 100-Gigabit Ethernet
+
+Future-Proofing Data Center Cabling
+-Specify minimum of OM3 fiber
+--OM4 as an option for extra reach
+-Design data centers for 100-150 meter maximum lengths between switches
+-Consider higher fiber count requirements
+--2 fibers per link becomes 24 fibers
+-MTP (or MPO) connectors will become the standard transceiver interface, compared to LC connectors
+-Consider cable management and structured cabling
+
+Hot and Cold Aisle Design
+-Cool air is drawn in from a common cold aisle
+-Hot air is exhausted out a common hot aisle
+-Having as much separation and containment of hot and cold air as possible is desirable
+-Helps avoid hot spots within the data center
+
+Enabling Hot Aisle/Cold Aisle Design
+-Many Rack are designed to assist air flow cold aisle to hot aisle
+-Raised floors with perforated tiles, ducts, and plenums can also be used to control air flow
+
+Power Considerations
+
+-Electricity costs rose 88% in the US since 2003
+
+Physical Plant Limitations and Efficiencies
+
+-Equipment selections now include space, power, and cooling efficiency metrics
+-Equipment placement within data centers is often directly related to cooling patterns and power grid design
+-Achieving these physical goals in conjunction with logical service delivery requirements is critical
+-Real estate budgets limit data enter size (in ft2 or m2)
+--Goal is to obtain maximum results from a defined footprint
+--Use metrics such as ports per rack, servers per rack, workloads per data center
+-Power costs are a major factor in a viable design
+--Requires maximum efficiency in design and utilization
+--Some new data centers are located close to cheaper, greener power
+-Up to 50% of power costs are for cooling
+--Design equipment and data center layouts for maximum cooling efficiency
+
+Energy Efficiency in Equipment Design
+-Sufficient and affordable power is an important determination of design
+--Servers and storage require more energy, in total, than network
+-Network industry has formed the ECR Initiative to form a common baseline for measuring energy use in equipment
+--energy efficiency ratio (EER=Gbps/KW) is the widely used comparison metric
+--Allows comparison of similar configurations on energy use
+
+Chapter 10:Network Management and Automation
+
+What is Network Management?
+-Network management is a broad topic and means different things to different people
+-Reasons for network management:
+--Manageability
+--Measurement
+--Planning (for the future)
+--Decreasing downtime
+--Configuration
+--Accounting
+
+
+Network Management Methodologies
+
+FCAPS Model
+F - Fault management
+C - Configuration management
+A - Accounting management
+P - Performance management
+S - Security management
+
+OAMP(T) Model
+O - Operations
+A - Administration
+M - Maintenance
+P - Provisioning
+(T) - Troubleshooting
+
+Separate Network Management and Production Networks
+-Production network loads or failures should no impact the ability to monitor and control the network infrastructure
+--Access to device and network performance and fault information is most crucial when the network is in a failure mode
+-Separation at the physical interface-level is preferable to logical separation
+-Separating production and management networks:
+--Mitigates bandwidth contention (performance)
+--Simplifies data collection and analysis (that is, management traffic volumes do not skew reported production traffic volumes)
+
+Configuration Management
+Consistent approach for physical layout expedites deployment as well as diagnostics:
+-Standardize rack layout
+-Standardize device slot and module population
+
+Keep like devices running identical software and firmware:
+-Expedites troubleshooting
+-Simplifies sparing and replacing
+-Determination of software versus hardware is much more obvious
+
+Configuration Management
+
+Define a device naming convention and follow it
+-Consistency in naming:
+--Eases automation of DNS zone edits
+--Simplifies pattern matching logic
+--Expedites physically locating devices
+-Brevity is good, so resist encoding too many things into a hostname (consider using DNS subdomains)
+
+Make use of description fields in device configurations:
+-Just like hostnames, define a convention and follow it strictly
+
+Configuration Management
+
+Backup
+
+Provide Secure remote Console Access
+-Device failure is imminent
+-Failure modes are seldom convenient:
+--Many failure modes of network equipment render remote inband access impossible, leaving only the console port
+-Ready access to all device serial consoles is critical:
+--Even if resources are onsite 24/7 you do not want to rely on being able to find the right combination of cables, adapters, and terminal emulation tools when you need them
+-Permanently connect serial consoles to dedicated console server ports
+-Ensure that console servers can provide remote IP terminal connectivity to the device serial ports - but only from trusted IP networks
+-Configure (and clearly label) one or more serial ports on the console server to provide locally-connected terminal access to the other ports:
+--Allows device console access even if the management IP network fails
+---Ensure that proper serial cables and adapters are always available for local console server access
+
+Baseline Network Behaviors
+-A reference is necessary for good performance or normal behavior in your network
+-Continuous monitoring and data collection creates a historical baseline of your network's normal behavior
+-Failures and anomalies become easier to detect once these normal behaviors are established
+
+Baseline network behaviors takes place in multiple planes:
+-Gross load and error rates
+-Traffic type and direction
+-Application-level behaviors
+
+Tools are available to baseline:SNMP data collectors;Flow Collection and reporting tools;Topology-aware tools;DPI tools
+
+The more detailed knowledge you have about your network's traffic and flows, the easier managing for optimum performance and reliability becomes
+
+Leverage Authentication, Authorization, and Accounting Systems
+-Centralizes control of authentication-Enable finer-grain accountability
+-AAA servers can enable features not available for device-local authentication
+--Password expiration
+--Two-factor authentication
+-Use of least privileged approach for profiles minimizes exposure
+-The value of centralized AAA increases exponentially with the number of devices
+
+Delegate Data Collection and Reduction
+
+-Data collection and thresholding using RMON alarms
+--Data collected and analyzed on-device
+-NMS notification on threshold crossings
+
+Considerations needed for proper threshold baselining and device resources
+-RPM
+--Distribute response time monitoring into network devices
+--Detect and report data-plane performance degradation that would be transparent to other instrumentation
+-Notification reduction using event policy
+--Event data reduction on-device by defining event policies
+
+Keep Things as Simple as Possible
+
+Always favor obvious over clever in automation scripts or network configurations
+
+Junos Space
+
+(described before)
+
+Network Director Overview
+
+Unified wired and wireless network management solution
+
+Network Diretor modes:Build;Deploy;Monitor;Fault;Report
+
+Security Director Overview
+
+Deploy end-to-end security services on network elements:Firewall, VPNs, NAT, UTM, Application Services, and IPS
+
+Junos Space centrally manages the security policy lifecycle
+
+Event Collection Challenges
+
+Challenges:
+-IT information overload
+-Compliance mandates
+-Evolving internal and external threats
+
+Juniper Secure Analytics
+
+-Network Security management
+--Collection of security event and network traffic monitoring
+--Normalizations and mapping of all data to a single format for processing and storage
+-Network security management requirements
+--Data analysis and correlation
+--Notifications and alarms
+--Operation and compliance reporting
+
+
+JSA Device Key Benefits
+
+Benefits:
+-Converged network security management console
+-Network, security, application, and identity awareness
+-Advanced analytics and threat detection
+-Compliance-driven capabilities
+-Scalable distributed log collection and archival
+
+Automate Device Configuration
+
+-Automation is crucial for scalability
+-Configuration automation provides consistency
+-NMS-based device configuration
+--Junos Space (Network Director)
+--Rancid
+--Solarwinds,Puppet, Chef, Ansible, Open NMS
+-For Junos devices, this automation can be achieved from within the devices themselves
+-Commit scripts:
+--Run at commit time
+--Inspect the incoming configuration
+--Instruct the management daemon to perform actions
+-Commit script allow customers better control over how their devices are configured
+--Programmatically constrain device configurations according to network architecture constraints
+--Defend against common errors by correcting device configurations automatically
+-Enabled customized configuration syntax to streamline configuration
+-Commit scripts can constrain device configuration
+--Codify customer-specific business rules
+--Block configurations that break the rules
+
+Examples:
+-Insist that each ATM interface does not have more than 1000 PVCs configured
+-Insist that an IGP does not use an import policy that will import full routing table
+-Insist that all LDP-enabled interfaces are configured for an IGP
+-Insist that the re0 and re1 configuration groups are set up correctly and that nothing in the foreground configuration is blocking their proper inheritance
+
+Result:Configuration problems are detected and prevented
+
+(Continue Automate Device Configuration)
+
+-Device configurations can be auto-corrected
+-Commit scripts can change configuration:
+--Correct errors as they are detected
+--Flesh out configuration based on implicit rules
+
+Examples:
+-Automatically build a protocols ospf group containing every Ethernet interface configured under [interfaces]
+-Automatically configure family iso on any interface with family mpls
+-Apply a configuration group for any SONET interface with a description string matching a particular regular expression
+
+Result:Problems are prevented before they occur
+
+Automate repetitive Diagnostic Functions
+
+-Typically, fault diagnosis is performed by following a set of written procedure from a network operations center handbook or something similar
+-Most procedure can be automated
+-Automating these repetive diagnostic tasks:
+--Enforces consistency
+---Allow operators and engineers to focus on problem analysis, not data collection
+
+On-device Diagnostic Automation
+
+-On-Device diagnostic scripts are op scripts and event scripts
+--Perform any function through RPC supported by Junos NETCONF/XML API and Junos Automation
+-Automation scripts allow:
+--Automatic diagnosis and repair of network problems
+--Changing device configuration in response to a problem
+
+-Op scripts:
+--Execute any Junos command
+--Results can be captured, processed, and automatically delivered to the CLI or remote systems
+
+-Event scripts
+-Can execute Junos commands or scripts, in response to an event policy
+--Occurrence of specific syslog messages or traps
+--Very similar to op scripts but can also operate on data received from the Junos event subsystem
+
+NMS-Based Diagnostic Automation
+
+-Can leverage access to device-based diagnostics:
+--Request execution of an op script on a router or switch
+--Request execution of ad-hoc native commands on devices
+-Can compare diagnostic output from multiple devices at the same time
+-Can leverage access to other management data:
+--Historical performance data-plane
+--Trouble-ticket history
+--Customer contact data
+--Circuit database
+
+Chef for Junos
+-Software that automates provisioning and management of compute, network, and storage solutions (VMs)
+--Abstract definitions written in Ruby and applied to infrastructure nodes running Chef clients
+
+Junos PyEZ
+
+Overview
+-Python-based micro-framework to remotely manage to automate Junos OS devices
+-Built for non-programmers and programmers alike
+-Built on top of community provided ncclient library
+
+SDN Overview
+
+What is SDN?
+-A different approach to designing, building, and managing networks
+--Provision for flexible and dynamic networks
+--Change how software works in a network
+-A solution to the current challenges of the network
+--Networks must adjust and respond dynamically
+--Newly added feature must not disrupt the network
+--Alleviate the need for manual configuration of individual devices
+-Separates the control plane from the forwarding plane
+
+SDN Use Case
+
+-SDN knows the entire network - all paths
+--Control plane moved to the SDN controller
+--Forwarding plane remains on switches
+--Optimal path selected
+--Redundant paths available
+
+Contrail
+
+What is Contrail?
+-SDN Solution
+--Automates and Orchestrates virtual networks
+--NFV
+--Big Data
+--Visualization
+-Two primary drivers
+--Cloud networking
+--NFV in service provider network
+
+Building Blocks:Basic Abstractions
+
+-Virtual Machines
+--Cloud tenants
+--Virtual Network Functions
+-Virtual Networks
+--Connect VMs
+-Gateway Devices
+
+Contrail Solution Overview
+Orchestrator (OpenStack, CloudStack)
+
+Chapter 11:Putting Network Design into Practise
+
+Network Design Checklist
+
+-Your Network Design Checklist should include:
+1. Process for understanding the customer's business and technical goals
+2. Validation process for analyzing customer's existing environment
+3. Steps for designing a network topology
+4. Process for selecting protocols, address schemes, naming conventions, and so forth
+5. Steps for implementing a security strategy
+6. Process for developing a network management and automation solution
+7. steps for testing, optimizing, and implementing your design
+
+What's in an RFP response?
+-when writing the RFP Response, you will include
+--An execute summary
+--A solution overview
+--Technical specifications
+
+-Understanding Customer Needs
+--Address the customer's key requirements
+--Use the customer's terminology and formatting
+--Outline the benefits of choosing your design
+
+Writing the Executive Summary
+-Executive Summary Key facts
+--The single most important part of the proposal
+--Overview of Juniper's value proposition to the customer
+--The only part of the document that will likely be read by all decision makers
+
+-Golden Rules
+1.Make it understandable to the customer
+2. Focus on organizational issues
+3. Keep it short and simple
+4. Avoid canned responses
+5. Avoid clichÃ©s
+6. Avoid history lessons
+
+-Recommended structure
+1. Introduction of the customer's need or problem
+2. Identification of business benefits
+3. Overview of your proposal solution
+4. Relevant supporting information outlining why the customer should choose your plan and Juniper Networks
+
+-Closing Statement
+--Ask for the business
+--Treat the customer as an equal
+
+Writing the Solution Overview
+-Technical summary of your proposed solution
+--Address customer goals, scope, and requirements
+--Outline technical benefits
+--Keep it short and simple
+--Assume that executives will read this section
+
+Responding to Technical Specifications
+-Outline the technical details of your proposal
+--Respond to the customer's RFP requirements
+--Include design requirements
+---logical and physical topologies
+---Bill of materials
+---Implementation roadmaps
+
+Appendix A Network Migration Strategies
+
+Juniper Networks' Migration Methodology
+
+Current State->Analysis->Migration Plan->Migration Execution->Desired Plan
+
+(3 Phases)
+Analysis-Desire state as apposed to current state
+Migration Plan-Processes;People;Technology;Tools;Risk Mitigation;Execution Plan
+Migration Execution-Plan Execution;Testing;Refining;Cutover
+
+Network and Systems Migration
+
+Analysis
+1.1 Stakeholder Engagement
+1.2 Business& Technical Goals, design Analysis
+1.3 Migration Constraints & Analysis
+1.4 Migration Strategy
+
+Migration Plan
+2.1 Migration Plan
+2.2 Migration Acceptance Test Plan
+2.3 Migration Validation Testing
+
+Migration Execution
+3.1 Pre-Migration Readiness
+3.2 Migration Cutover
+3.3 Post-Migration Acceptance Testing
+3.4 Migration Handover
+
+Automation:Leveraged Across All Phases
+
+-Automation scripts and tools
+--Help drive efficiency
+--Accelerate project delivery
+--Simplify migration workflows
+--Enable precision and promote accuracy
+--Mitigate risk
