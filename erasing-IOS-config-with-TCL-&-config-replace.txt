@@ -1,0 +1,10 @@
+tclsh
+puts [ open "flash:blank.cfg" w+] {
+version 1.1
+!
+end
+}
+tclquit
+
+
+config replace flash:blank.cfg
