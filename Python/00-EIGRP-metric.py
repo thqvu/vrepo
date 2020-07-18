@@ -1,7 +1,7 @@
 ### Calculate EIRP Classic Mode metric
 from os import system
 
-system('cls')
+# system('cls')
 
 ### Input Bandwidth
 BW = input('Enter the min Bandwidth along the path in Kbps: ')
