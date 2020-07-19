@@ -27,7 +27,7 @@ with open("ip.txt","r") as f:
 #printed on webpage
 print("DEBUG_INFO",str(sys.argv))
 #baseurl = input("URL to configs: ")
-baseurl = "http://172.23.188.45/{}/".format(sys.argv[1])
+baseurl = "http://192.168.79.49/{}/".format(sys.argv[1])
 print(baseurl)
 for device in devices:
     device = device.strip('\n').split(' ')

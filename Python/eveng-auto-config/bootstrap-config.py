@@ -8,7 +8,7 @@ import re
 
 def eveng_api():
     data = '{"username":"admin","password":"eve","html5": "-1"}'
-    login = requests.post('http://192.168.136.131/api/auth/login', data=data)
+    login = requests.post('http://192.168.81.7/api/auth/login', data=data)
     cookies = login.cookies
     headers = {
         'Connection': 'keep-alive',
@@ -16,13 +16,13 @@ def eveng_api():
         'DNT': '1',
         'X-Requested-With': 'XMLHttpRequest',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
-        'Referer': 'http://192.168.136.131/legacy/',
+        'Referer': 'http://192.168.81.7/legacy/',
         'Accept-Language': 'en-US,en;q=0.9',
     }
     # current date and time
     now = datetime.now()
     time_stamp = datetime.timestamp(now) * 1000
-    url = 'http://192.168.136.131/api/labs/{}.unl/nodes?_={}'.format(sys.argv[1],int(time_stamp))
+    url = 'http://192.168.81.7/api/labs/{}.unl/nodes?_={}'.format(sys.argv[1],int(time_stamp))
     nodes = requests.get(url=url, headers=headers, cookies=cookies)
 
     data = nodes.json()

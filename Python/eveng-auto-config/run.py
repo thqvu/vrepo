@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route('/config', defaults={'req_path': ''})
 @app.route('/<path:req_path>')
 def dir_listing(req_path):
-    BASE_DIR = '/home/omz/workspace/eveng-config-deploy/atc-iol-initialcfgs'
+    BASE_DIR = '/Users/vutran/vrepo/Python/eveng-auto-config/atc-iol-initialcfgs'
 
     # Joining the base and the requested path
     abs_path = os.path.join(BASE_DIR, req_path)
