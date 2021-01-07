@@ -1,0 +1,10 @@
+{"People":
+    [
+        {
+            "Id": 1,
+            "FirstName": "Vu",
+            "LastName": "Tran",
+            "Active" : true
+        }
+    ]
+}
