@@ -5,6 +5,12 @@
             "FirstName": "Vu",
             "LastName": "Tran",
             "Active" : true
+        },
+        {
+            "Id": 2,
+            "FirstName": "Tran",
+            "LastName": "Vu",
+            "Active" : false
         }
     ]
 }
