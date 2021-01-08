@@ -2,14 +2,14 @@
     [
         {
             "Id": 1,
-            "FirstName": "Vu",
-            "LastName": "Tran",
+            "FullName": "Vu Tran",
+            "UserName": "edward",
             "Active" : true
         },
         {
             "Id": 2,
-            "FirstName": "Tran",
-            "LastName": "Vu",
+            "FullName": "Tran Vu",
+            "UserName": "drawde",
             "Active" : false
         }
     ]
