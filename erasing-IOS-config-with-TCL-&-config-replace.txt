@@ -9,3 +9,4 @@ tclquit
 config replace flash:blank.cfg
 
 
+a
