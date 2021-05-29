@@ -1,5 +1,5 @@
-import pexpect
+import wexpect
 
-ping = pexpect.spawn('ping -c 5 localhost')
-result = ping.expect([pexpect.EOF, pexpect.TIMEOUT])
+ping = wexpect.spawn("ping localhost")
+result = ping.expect([wexpect.EOF, wexpect.TIMEOUT])
 print(ping.before)
