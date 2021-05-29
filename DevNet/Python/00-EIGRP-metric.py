@@ -17,3 +17,4 @@ print('The Delay value = ' + str(DLY))
 
 COMP_METRIC = (BW + DLY) * 256
 print('EIGRP Classic Mode metric = ' + str(COMP_METRIC))
+
