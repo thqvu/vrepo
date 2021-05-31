@@ -1,0 +1,2 @@
+python3 -m venv py3-venv
+source py3-venv/bin/activate
