@@ -13,29 +13,25 @@ NL = ctrl.Antecedent(X, "Năng lực")
 CV = ctrl.Antecedent(X, "Chức vụ")
 DG = ctrl.Consequent(X, "Đánh giá điểm")
 
-
+### Xây dựng tập mờ
 BH["Đầy đủ"] = fz.trapmf(BH.universe, [7.5, 9, 10, 10])
 BH["Trung bình"] = fz.trimf(BH.universe, [4, 6, 7.5])
 BH["Quá ít"] = fz.trimf(BH.universe, [0, 0, 4.5])
-
 BH.view()
 
 NL["Khá giỏi"] = fz.trapmf(NL.universe, [7.5, 9, 10, 10])
 NL["Trung bình"] = fz.trimf(NL.universe, [4, 6, 7.5])
 NL["Yếu"] = fz.trimf(NL.universe, [0, 0, 4.5])
-
 NL.view()
 
 CV["Cao"] = fz.trapmf(CV.universe, [7.5, 9, 10, 10])
 CV["Bình thường"] = fz.trimf(CV.universe, [4, 6, 7.5])
 CV["Thấp"] = fz.trimf(CV.universe, [0, 0, 4.5])
-
 CV.view()
 
 DG["Cao"] = fz.trapmf(DG.universe, [7, 8.5, 10, 10])
 DG["Trung bình"] = fz.trapmf(DG.universe, [3.5, 4, 6, 6.5])
 DG["Thấp"] = fz.trapmf(DG.universe, [0, 0, 3, 4])
-
 DG.view()
 
 ### Các luật liên quan
@@ -90,11 +86,8 @@ DCV = float(input("Nhập mức độ chức vụ (1-10): "))
 model.input["Buổi học"] = DBH
 model.input["Năng lực"] = DNL
 model.input["Chức vụ"] = DCV
-
 model.compute()
 
 ### Xuất kết quả
 DDG = model.output["Đánh giá điểm"]
 print("Khả năng xét điểm là: %.1f" %DDG)
-
-
