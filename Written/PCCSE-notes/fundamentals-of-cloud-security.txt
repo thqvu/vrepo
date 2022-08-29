@@ -19,3 +19,18 @@ Important Terminology
             A workforce that reaches beyond the restrictions of a traditional office environment. A distributed workforce is dispersed geographically over a wide area, domestically or internationally.
     -   Cloud Cybersecurity Infrastructure
             Refers to the tools, data, and infrastructure that protect cloud-based products from malicious actors.
+    -   On-Premises
+            A solution hosted in-house and usually supported by a third party.
+    -   Role-Based Access Control (RBAC)
+            A method of restricting network and resource access based on the roles of individual users within an enterprise.
+
+    -   DevOps
+            A set of practices that combines software development (Dev) and IT operations (Ops).
+    -   Operating System (OS)
+            System software that manages computer software resources and hardware peripheral devices, and provides common services for computer programs.
+    -   Virtual Machine
+            An emulation of a computer system that runs in the form of software and, like a physical computer, runs an operating system and applications.
+    -   App Software
+            A program or group of programs designed to help end users be more productive.
+    -   Runtime
+            In computer programming, a runtime environment primarily implements portions of an execution model. Most programming languages have some form of runtime environment in which programs run.
