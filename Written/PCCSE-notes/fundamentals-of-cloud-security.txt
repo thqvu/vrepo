@@ -1,0 +1,21 @@
+Cloud computing is not a location but rather a pool of resources that can be rapidly provisioned in an automated, on-demand manner.
+    -   Cloud computing is "a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (such as networks, servers, storage, apps and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction.
+
+Value
+    -   Economies of scale
+            The ability to pool resources to archieve economies of scale.
+                This ability to pool resources is true for private or public clouds.
+   
+    -   Agility
+            The ability to be more agile.
+                Instead of having many independent and often under-used servers deployed for your enterprise apps, pools of resources are aggregated, consolidated and designed to be elastic enough to scale with the needs of your organization.
+
+Important Terminology
+    -   Identity and Access Manangement (IAM)
+            A framework of business processes, policies and technologies that facilitates the management of electronic or digital identities.
+    -   Technical Debt
+            A software development concept, in which additional future costs are anticipated for rework due to an earlier decision or course of action that was necessary for agility but was not necessarily the most optimal or appropriate decision or course of action.
+    -   Distributed Workforce
+            A workforce that reaches beyond the restrictions of a traditional office environment. A distributed workforce is dispersed geographically over a wide area, domestically or internationally.
+    -   Cloud Cybersecurity Infrastructure
+            Refers to the tools, data, and infrastructure that protect cloud-based products from malicious actors.
