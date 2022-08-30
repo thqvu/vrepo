@@ -34,3 +34,28 @@ Important Terminology
             A program or group of programs designed to help end users be more productive.
     -   Runtime
             In computer programming, a runtime environment primarily implements portions of an execution model. Most programming languages have some form of runtime environment in which programs run.
+
+Cloud Computing Ecosystem
+        Consists of service models, deployment models, responsibilities, and security challenges.
+
+        Service Models, Deployment Models, and Responsibilities
+                Virtualization is a critical component of a cloud computing architecture that, when combined with software orchestration and management tools allows you to integrate disparate processes so that they can be automated, easily replicated, and offered on an as-needed basis.
+
+Cloud Computing Service Models
+        As data center managers face a burgeoning population of mobile users, the distributed workforce – with multiple endpoints and cloud applications – is forcing organizations to evolve both their in-house and cloud cybersecurity infrastructures.  
+
+        NIST defines three distinct cloud computing service models.
+                -       SaaS
+                                The customer does not manage the application or underlying cloud infrastructure that delivers the application. The customer can only create and store user specific data using the provided SaaS application. 
+                                        The customer is responsible for securing user-specific data created using the SaaS application. 
+                                        The SaaS provider is responsible for securing the application and the underlying cloud infrastructure running the application.                        
+
+                -       PaaS
+                                Customers can deploy supported applications onto the Cloud Service provider’s (CSP) infrastructure without the burden of fully managing and controlling the underlying cloud infrastructure.
+                                        The customer is responsible for securely storing data and for securely configuring the application.
+                                        The CSP is responsible for securing the computer infrastructure and virtual environment and for securely hosting the database application.
+
+                -       IaaS
+                                Customers securely configure, manage, and deploy the virtual environment running their applications. 
+                                        Customers are responsible for securing their virtual machines, the virtual machine operating systems, operating system runtime environments, application software, and application data.
+                                        CSPs are responsible for securing the physical computers running the virtual environment.
