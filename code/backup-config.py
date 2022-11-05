@@ -1,6 +1,6 @@
 from netmiko import ConnectHandler
-from netmiko.ssh_exception import NetMikoTimeoutException
-from netmiko.ssh_exception import NetMikoAuthenticationException
+# netmiko.ssh_exception import NetMikoTimeoutException
+#from netmiko.ssh_exception import NetMikoAuthenticationException
 from paramiko.ssh_exception import SSHException
 import time
 import datetime
