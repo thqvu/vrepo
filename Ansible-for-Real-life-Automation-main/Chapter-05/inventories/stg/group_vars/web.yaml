@@ -1,2 +1,0 @@
-# file: stg/group_vars/web.yaml
-web_server_port: 80

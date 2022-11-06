@@ -1,9 +1,0 @@
-- name: Collect System Information
-  hosts: nodes
-  become: true
-  vars:
-    report_admin_email: admin@lab.local
-  tasks:
-    - name: Generate System Report
-      include_role: 
-        name: system-report
