@@ -1,15 +1,14 @@
 # DevOps
 
 ## Learning programming languages
-Go (recommended)
-Ruby
-Python
-Node.js
-
+Go (recommended)\
+Ruby\
+Python\
+Node.js\
 ## Study operating systems
-Linux (recommended)
-Unix
-Windows
+Linux (recommended)\
+Unix\
+Windows\
 ### OS concepts to learn include:
 Process Management
 Sockets
